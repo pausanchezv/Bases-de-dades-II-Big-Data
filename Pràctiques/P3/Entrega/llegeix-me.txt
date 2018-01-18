@@ -1,0 +1,8 @@
+La pràctica es troba al directori Spark_Word2Vec_TensorFlow. S'aconsella anar seguint l'explicació feta a la memòria (subdirectori 'docs'), on hi ha les instruccions d'ús i execució de la pràctica sencera, des de la neteja de textos fins, la vectorització i generació del '.tsv' i la posterior visualització a TensorFlow.
+
+L'execució amb Spark a databricks pot ser una mica lenta (mai més d'1 minut). Cal tenir paciència si es decideix executar el programa per crear el TSV enlloc de fer servir el que ja es dóna creat amb la pràctica.
+
+Si l'script.sh que executa el programa Scala de neteja no funciona, caldrà donar els permisos d'execució:
+chmod 777 script.sh (des de la carpeta contenidora)
+
+Pau i Guillem

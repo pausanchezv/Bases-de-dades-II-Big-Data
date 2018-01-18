@@ -1,0 +1,1 @@
+Aquesta carpeta conté els fitxers JSON que serveixen com a jocs dde proves per fer la ingesta via fitxers a través de paquet sender.

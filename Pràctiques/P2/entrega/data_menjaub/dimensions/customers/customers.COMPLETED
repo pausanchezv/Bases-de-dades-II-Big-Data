@@ -1,0 +1,10 @@
+{"_id":1, "firstname":"customer_1", "lastname":"surname customer_1", "phone_number":"", "email_adress":"", "other_details":"Details from customer 1"}
+{"_id":2, "firstname":"customer_2", "lastname":"surname customer_2", "phone_number":"", "email_adress":"", "other_details":"Details from customer 2"}
+{"_id":3, "firstname":"customer_3", "lastname":"surname customer_3", "phone_number":"", "email_adress":"", "other_details":"Details from customer 3"}
+{"_id":4, "firstname":"customer_4", "lastname":"surname customer_4", "phone_number":"", "email_adress":"", "other_details":"Details from customer 4"}
+{"_id":5, "firstname":"customer_5", "lastname":"surname customer_5", "phone_number":"", "email_adress":"", "other_details":"Details from customer 5"}
+{"_id":6, "firstname":"customer_6", "lastname":"surname customer_6", "phone_number":"", "email_adress":"", "other_details":"Details from customer 6"}
+{"_id":7, "firstname":"customer_7", "lastname":"surname customer_7", "phone_number":"", "email_adress":"", "other_details":"Details from customer 7"}
+{"_id":8, "firstname":"customer_8", "lastname":"surname customer_8", "phone_number":"", "email_adress":"", "other_details":"Details from customer 8"}
+{"_id":9, "firstname":"customer_9", "lastname":"surname customer_9", "phone_number":"", "email_adress":"", "other_details":"Details from customer 9"}
+{"_id":10, "firstname":"customer_10", "lastname":"surname customer_10", "phone_number":"", "email_adress":"", "other_details":"Details from customer 10"}

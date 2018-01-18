@@ -1,0 +1,107 @@
+<Schema name="menjaub" description="menjaub">
+  <Cube name="sales" visible="true" description="sales" cache="true" enabled="true">
+    <Table name="sales" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="customer_id" highCardinality="false" name="customer" description="customer">
+      <Hierarchy name="customer" visible="true" hasAll="true" primaryKey="customer_id" description="customer">
+        <Annotations>
+          <Annotation name="clients">
+            <![CDATA[]]>
+          </Annotation>
+        </Annotations>
+        <Table name="customer" schema="public">
+        </Table>
+        <Level name="customer" visible="true" table="customer" column="customer_id" nameColumn="customer_first_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="customer">
+          <Property name="other_details" column="other_details" type="String" description="other_details">
+          </Property>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="staff_id" highCardinality="false" name="staff" description="staff">
+      <Hierarchy name="staff" visible="true" hasAll="true" primaryKey="staff_id" description="staff">
+        <Table name="staff" schema="public">
+        </Table>
+        <Level name="staff" visible="true" table="staff" column="staff_id" nameColumn="staff_first_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="staff">
+          <Property name="staff_role_description" column="staff_role_description" type="String" description="staff_role_description">
+          </Property>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="table_number" highCardinality="false" name="tables" description="tables">
+      <Hierarchy name="tables" visible="false" hasAll="true" primaryKey="table_number" description="tables">
+        <Table name="tables" schema="public">
+        </Table>
+        <Level name="tables" visible="true" table="tables" column="table_number" nameColumn="table_details" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="tables">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="date_id" highCardinality="false" name="dates" description="dates">
+      <Hierarchy name="dates" visible="true" hasAll="true" primaryKey="date_id" description="sales dates">
+        <Table name="dates" schema="public">
+        </Table>
+        <Level name="dates" visible="true" table="dates" column="date_id" nameColumn="date_id" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="dates">
+          <Property name="day" column="date_day" type="Integer" description="day">
+          </Property>
+          <Property name="month" column="date_month" type="Integer" description="month">
+          </Property>
+          <Property name="year" column="date_year" type="Integer" description="year">
+          </Property>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="total_amount" column="total_amount" datatype="Numeric" aggregator="sum" description="total_amount" visible="true">
+    </Measure>
+    <Measure name="quantity" column="quantity" datatype="Numeric" aggregator="count" description="quantity" visible="true">
+    </Measure>
+    <Measure name="cost_price" column="cost_price" datatype="Numeric" aggregator="sum" description="cost_price" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="booking" visible="true" description="booking" cache="true" enabled="true">
+    <Table name="booking" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="customer_id" highCardinality="false" name="customer" description="customer">
+      <Hierarchy name="customer" visible="true" hasAll="true" primaryKey="customer_id" description="customer">
+        <Table name="customer" schema="public">
+        </Table>
+        <Level name="customer" visible="true" table="customer" column="customer_id" nameColumn="customer_first_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="customer">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="table_number" highCardinality="false" name="tables" description="tables">
+      <Hierarchy name="tables" visible="true" hasAll="true" primaryKey="table_number" description="tables">
+        <Table name="tables" schema="public">
+        </Table>
+        <Level name="tables" visible="true" table="tables" column="table_number" nameColumn="table_details" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="tables">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="origin_id" highCardinality="false" name="origin" description="origin">
+      <Hierarchy name="origin" visible="true" hasAll="true" primaryKey="origin_id" description="origin">
+        <Table name="origin" schema="public">
+        </Table>
+        <Level name="origin" visible="true" table="origin" column="origin_id" nameColumn="origin_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="origin">
+          <Property name="percentage_comission" column="origin_percentage_comission" type="Numeric" description="percentage_comission">
+          </Property>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="date_id" name="dates" description="dates">
+      <Hierarchy name="dates" visible="false" hasAll="true" primaryKey="date_id" description="dates">
+        <Table name="dates" schema="public">
+        </Table>
+        <Level name="dates" visible="true" table="dates" column="date_id" nameColumn="date_id" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="dates">
+          <Property name="day" column="date_day" type="Integer" description="day">
+          </Property>
+          <Property name="month" column="date_month" type="Integer" description="month">
+          </Property>
+          <Property name="year" column="date_year" type="Integer" description="year">
+          </Property>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="num_persons" column="num_persons" aggregator="sum" description="num_persons" visible="true">
+    </Measure>
+    <Measure name="quantity" column="quantity" datatype="Integer" aggregator="count" description="quantity" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
